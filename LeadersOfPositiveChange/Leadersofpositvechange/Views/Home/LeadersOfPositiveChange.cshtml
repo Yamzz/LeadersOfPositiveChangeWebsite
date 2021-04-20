@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Leaders Of Positive Change";
+}
+
+@section styles {
+    <link href="~/Content/_index.css" rel="stylesheet" />
+}
+
+<style>
+    /*.fh5co-hero {
+        position: relative;
+        height: 10px; 
+    }*/
+</style>
+
+<h1 class="text-center">
+    <b> Join Our Non-Profit Organization</b>
+    <span class="glyphicon glyphicon-globe logo"></span>
+</h1>
+
+<div class="fh5co-hero">
+    <div id="myCarousel" style="margin-top:20px;">
+
+        <div style="width:100%;margin: 0 auto;">
+            <img class="img-responsive"
+                 src="~/Content/images/homescreen/main_page.PNG"
+                 alt="Make A difference" style="width:80%;margin: 0 auto;">
+        </div>
+    </div>
+</div>
+<!-- end:header-top -->
+<div id="fh5co-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-left">
+                    <span class="icon">
+                        <i class="icon-profile-male"></i>
+                    </span>
+                    <div class="feature-copy">
+                        <h3 style="color:darkgreen">Become a volunteer</h3>
+                        <p>If you are looking for an exciting volunteering and become part of what we building and clarify their values on which to build successful lives....</p>
+                        <p><a href="@Url.Action("Volunteer", "Home")">Learn More</a></p>
+                        <span><a style="background-color:#43200a" class="btn btn-primary btn-lg" href="@Url.Action("Volunteer", "Home")">Get Involved</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="feature-left">
+                    <span class="icon">
+                        <i class="icon-wallet"></i>
+                    </span>
+                    <div class="feature-copy">
+                        <h3 style="color:darkgreen">Donations</h3>
+                        <p>We are a Non-Profit Orgnisation and here we have positive leaders, who are committed to transforming the lives of orphaned children..</p>
+                        <p><a href="@Url.Action("Donate", "Donation")">Learn More</a></p>
+                        <span><a style="background-color:#43200a" class="btn btn-primary btn-lg" href="@Url.Action("Donate", "Donation")">Donate Now</a></span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12  text-center heading-section">
+                    <hr />
+                    <h1 class="text-uppercase"><b> Support Our Cause  </b> </h1>
+                    <p>
+                        See our exciting projects and events that we have accomplish so far.
+                        This shows how we have help them develop positive self-esteem
+                    </p>
+                    <img src="~/Content/images/homescreen/jannik-skorna-388892-unsplash.jpg" alt="Children" style="width:100%; height:800px">
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="feature-left">
+                    <span class="icon">
+                        <i class="icon-image"></i>
+                    </span>
+                    <div class="feature-copy">
+                        <h3 style="color:darkgreen">Our Gallery</h3>
+                        <p>
+                            See our exciting projects and events that we have accomplish so far.
+                            This shows how we have help them develop positive self-esteem
+                        </p>
+                        <p><a href="@Url.Action("Gallery", "Home")">Learn More</a></p>
+                        <span><a style="background-color:#43200a" class="btn btn-primary btn-lg" href="@Url.Action("Gallery", "Home")">Our Gallery</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="feature-left">
+                    <span class="icon">
+                        <i class="icon-book"></i>
+                    </span>
+                    <div class="feature-copy">
+                        <h3 style="color:darkgreen">Read our Blog</h3>
+                        <p>
+                            Read all about our cause, our journey and what we are currently doing, to help those that need it most.
+                            These stories will inspire you.
+                        </p>
+                        <p><a href="@Url.Action("OurBlog", "Home")">Learn More</a></p>
+                        <span><a style="background-color:#43200a" class="btn btn-primary btn-lg" href="@Url.Action("OurBlog", "Home")">Our Blog</a></span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

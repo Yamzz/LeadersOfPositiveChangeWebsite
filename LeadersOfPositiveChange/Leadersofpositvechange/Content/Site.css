@@ -1,0 +1,94 @@
+﻿body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 105px;
+    padding-right: 105px;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.jumbotron {
+    /*background-color: #e7f4e7;
+    color: #000000; DarkGreen   #0b370f*/
+    width: 100%;
+    /*background-color: #130702;*/
+    color: white;
+    padding: 10px;
+    background: linear-gradient(-90deg, #331705, #130702 );
+}
+
+
+.page-footer {
+    background: #6ea46e;
+    color:white; 
+}
+
+#donateBtn {
+    background-color: white;
+    color: white;
+    border: solid 2px DarkGreen;
+}
+
+    #donateBtn:hover {
+        background-color: #e7f4e7;
+        color: #ffffff;
+        /*font-size: larger;
+        font-weight: bolder;*/
+    }
+    /* Set width on the form input elements since they're 100% wide by default */
+    /*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.hit-the-floor {
+    color: #130702;
+    font-size: 4em;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.hit-the-floor {
+    text-align: center;
+}
+
+.icon-instagram {
+    padding: 15px;
+    border-radius: 5px;
+    background: #b11d39;
+    color: white; 
+}
+
+
+.icon-facebook2 {
+    padding: 15px;
+    border-radius: 5px;
+    background: #3B5998;
+    color: white;
+}
+
+.icon-instagram2 {
+    padding: 10px;
+    border-radius: 5px;
+    background: #b11d39;
+    color: white
+}
+
+
+.icon-facebook3 {
+    padding: 10px;
+    border-radius: 5px;
+    background: #3B5998;
+    color: white
+}

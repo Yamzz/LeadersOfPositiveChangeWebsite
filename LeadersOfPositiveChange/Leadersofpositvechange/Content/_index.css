@@ -1,0 +1,132 @@
+﻿
+.carousel-item {
+    height: 65vh;
+    min-height: 600px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+    -webkit-transition: 0.6s ease-in-out left;
+    -moz-transition: 0.6s ease-in-out left;
+    -o-transition: 0.6s ease-in-out left;
+    transition: 0.6s ease-in-out left;
+}
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+    .carousel-fade .carousel-inner .active.left,
+    .carousel-fade .carousel-inner .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+        .carousel-fade .carousel-inner > .item.next.left,
+        .carousel-fade .carousel-inner > .item.prev.right,
+        .carousel-fade .carousel-inner > .item.active {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+}
+
+.carousel-caption {
+    text-shadow: 0 1px 4px rgba(0,0,0,.9);
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    right: 29%;
+    text-align: center;
+    /*max-width: 500px;*/
+    left: auto;
+    /*top: auto;*/
+    top: 50%;
+    transform: translateY(-50%);
+    /*bottom: initial;*/
+}
+
+    .carousel-caption h3 {
+        font-size: 30px;
+        font-family: 'Lato', sans-serif;
+    }
+
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#myCarousel {
+    margin-top: -2px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#mission_statement{
+    padding-left:10px; 
+    padding-right:10px; 
+
+}
+
+
+#our_values {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*.item:nth-child(1) {
+    background: url('images/chickens.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.item:nth-child(2) {
+    background: url('images/farm_1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.item:nth-child(3) {
+    background: url('images/football.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}*/

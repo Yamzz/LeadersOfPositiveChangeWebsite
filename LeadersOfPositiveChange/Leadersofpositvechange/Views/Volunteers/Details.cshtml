@@ -1,0 +1,57 @@
+﻿@model LOPC.Entities.Entities.Volunteer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Volunteer Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <hr>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <hr>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <hr>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <hr>
+        <dt>
+            Date/Time of Message
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTimeMessage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id } , new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Back to List", "Index", null,new { @class = "btn btn-default" })
+</p>

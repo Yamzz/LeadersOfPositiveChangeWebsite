@@ -1,0 +1,73 @@
+﻿@model PagedList.IPagedList<LOPC.Entities.Entities.Volunteer>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Volunteers";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<div class="panel panel-heading panel-info">
+    <h1 class="text-center">Volunteers</h1>
+</div>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Phone)*@
+            Phone
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Email)*@
+            Email
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Message)*@
+            Message
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DateTimeMessage)*@
+            Date and Time of Message
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeMessage)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LOPC.Entities.Entities.BlogPost>
+
+@{
+    ViewBag.Title = "Blog";
+}
+<style>
+    .blogimage {
+        height: 400px;
+        width: auto\9; /* ie8 */
+        /* Magic! */
+        max-width: 50vw;
+    }
+
+</style>
+<div class="jumbotron text-center">
+    <h1 class="text-center">
+        <b class="text-uppercase">Our Blog</b>
+    </h1>
+    <h4>Read, Learn and be Inspired</h4>
+</div>
+
+
+<div style="margin-top:-50px" id="fh5co-blog-section" class="fh5co-section-gray">
+    <div class="container">
+        <div id="all_blog_items" class="row row-bottom-padded-md">
+
+            @foreach (var blog in Model)
+            {
+
+                string filename = Path.GetFileName(blog.Image);
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="fh5co-blog">
+                        <a href="@Url.Action("BlogPost", "Home", new { postId = blog.Id})"  >
+                            <img class="img-responsive blogimage" src="@Url.Content("~/Content/images/blog/" + filename)" alt="" />
+                        </a>
+                        <div class="blog-text" style="height: 350px !important">
+                            <div class="prod-title">
+                                <h3><a href="@Url.Action("BlogPost", "Home", new { postId = blog.Id})"> @Html.DisplayFor(modelItem => blog.Title)</a></h3>
+                                <span class="posted_by">
+                                    @Convert.ToDateTime(blog.DateTime).ToString("dd/MM/yyyy")
+                                </span>
+                                <span class="comment"><a> @Html.DisplayFor(modelItem => blog.PostedBy)<i class="icon-bubble2"></i></a></span>
+                                <p> @Html.DisplayFor(modelItem => blog.ShortDescription) </p>
+                                <p><a href="@Url.Action("BlogPost", "Home", new { postId = blog.Id})">Learn More...</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-md-block"></div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- fh5co-blog-section -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $("#all_blog_items").height() - $(window).height()) {
+                // ajax call get data from server and append to the div
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,50 @@
+﻿@model LOPC.Entities.Entities.BlogPost
+
+@{
+    ViewBag.Title = "BlogPost";
+}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-10 col-lg-offset-1">
+
+            <!-- Title -->
+            <h1 class="mt-4">  @Html.DisplayFor(model => model.Title) </h1>
+
+            <!-- Author -->
+            <p class="lead">
+                by
+                <a style="font-style:italic"> @Html.DisplayFor(model => model.PostedBy) </a>
+            </p>
+
+            <hr>
+
+            <!-- Post Description -->
+            <p style="font-size:large; color:black" >
+                  @Html.DisplayFor(model => model.ShortDescription)
+            </p>
+
+
+            <!-- Preview Image -->
+            @{
+                string filename = Path.GetFileName(Model.Image);
+            }
+            <img class="img-fluid rounded" src="@Url.Content("~/Content/images/blog/" + filename)" style="margin: 0 auto" width="600" height="500" />
+            @*<img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">*@
+
+
+
+            <hr>
+            <!-- Post Content -->
+            <p> @Html.Raw(Model.Post) </p>
+            <hr>
+
+            <!-- Date/Time -->
+            <p style="float:right">Posted on @Convert.ToDateTime(Model.DateTime).ToString("dd/MM/yyyy")</p>
+
+        </div>
+    </div>
+</div>

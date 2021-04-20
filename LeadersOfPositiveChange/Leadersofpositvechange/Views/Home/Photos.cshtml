@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Leadersofpositvechange.Models.Photos>
+
+<link href="~/Content/_photos.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <section>
+        <div class="jumbotron text-center">
+            <h2 class="text-center">
+                <b class="text-uppercase"> @ViewBag.Title</b>
+            </h2>
+        </div>
+    </section>
+</div>
+
+
+
+@*<h1 class="text-center">
+    <b class="text-uppercase"> @ViewBag.Title</b>
+</h1>*@
+
+<div class="row" style="margin-left:5px;margin-right:5px;">
+
+    @foreach (var image in Model)
+    {
+        <div class="column">
+            <img class="column_img" alt="@image.Description" src="@Url.Content(@image.Path)" style="width:90%" onclick="openModal();currentSlide(2)" />
+        </div>
+    }
+
+    @*"~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.22.jpeg"*@
+
+    @*<div class="column">
+            <img class="column_img" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.22.jpeg" style="width:90%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img class="column_img" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.23.jpeg" style="width:90%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img class="column_img" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.24.jpeg" style="width:90%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img class="column_img" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.25.jpeg" style="width:90%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>
+
+        <div class="column">
+            <img class="column_img" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.25 (2).jpeg" style="width:90%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>*@
+
+</div>
+
+
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" style="margin-top:150px !important; width:50% !important">
+
+        @{
+            int i = 0;
+        }
+        @foreach (var image in Model)
+        {
+            i++;
+            <div class="mySlides">
+                <div class="numbertext">@i / @Model.Count()</div>
+                <img class="img-responsive" alt="@image.Description" src="@Url.Content(@image.Path)">
+            </div>
+        }
+        @*<div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img class="img-responsive" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.22.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img class="img-responsive" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.23.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img class="img-responsive" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.24.jpeg">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img class="img-responsive" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.25.jpeg">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img class="img-responsive" src="~/Photos/Football/WhatsApp Image 2018-07-24 at 03.00.25 (2).jpeg">
+            </div>*@
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    //window.onload = function () {
+    //    console.log('window - onload'); // 4th
+    //    $("#footer").hide();
+    //};
+
+    function openModal() {
+        document.getElementById('myModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+
+</script>
+
